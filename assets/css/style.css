@@ -1,0 +1,534 @@
+:root {
+	--pink: #800000;
+	--pink-muted: #F8EDED;
+	--pink-light: #CC8080;
+	--pink-hover: #660000; 
+	--white: #ffffff;
+	--grey: #cccccc;
+	--light-grey: #d4d4d4;
+	--very-light-grey: #eeeeee;
+	--dark-grey: #999999;
+	--dark: #151515;
+	--black: #000000;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	font-family: 'Work Sans', sans-serif;
+}
+
+body.transition {
+	animation: fadeInAnimation ease 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.open {
+	background: var(--white);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	z-index: 3;
+	overflow-y: hidden;
+	transition: transform 1s ease-in-out;
+}
+
+.doors {
+	width: 400px;
+	height: 500px;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.door {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	transform-origin: center left;
+	transition: transform 1s, filter 0.5s;
+	overflow: hidden;
+}
+
+.door img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+} 
+
+.door.left {
+	left: 22px;
+}
+
+.door.right {
+	right: 22px;
+	transform-origin: center right;
+}
+
+.h1-heading {
+	position: absolute;
+	text-align: center;
+	width: 50%;
+	font-size: 45px;
+	margin: auto;
+}
+
+.h1-heading.left {
+	left: 0;
+}
+
+.h1-heading.right {
+	right: 0;
+}
+
+.huruf-sambung {
+	font-family: 'Sacramento', cursive;
+}
+
+.medieval-font{
+	font-family: 'Uncial Antiqua', cursive;
+	color: var(--pink-muted); /* Menggunakan warna maroon untuk teks ini */
+    font-size: 1rem; /* Ukuran font yang lebih besar */
+    line-height: 1.5; /* Spasi baris untuk keterbacaan */
+    text-align: center;
+}
+	
+.huruf-sambung2 {
+            font-family: 'Allura', cursive; /* Menggunakan Allura sebagai font utama, cursive sebagai fallback */
+            font-weight: bold;
+}
+
+.nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	list-style-type: none;
+	display: flex;
+	background-color: var(--pink);
+	height: 80px;
+	z-index: 1;
+}
+
+.nav li {
+	flex: 1;
+}
+
+.nav li a {
+	text-decoration: none;
+	color: var(--very-light-grey);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	z-index: 1;
+	position: relative;
+}
+
+.nav li a:hover {
+	color: var(--white);
+}
+
+.nav li a.nav-item-music {
+	transform: translateY(-20%);
+	font-size: 30px;
+	top: -30px;
+	transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav .nav-music {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background-color: var(--dark);
+	position: absolute;
+	top: -35px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.nav li a.rotate {
+	animation: rotateAnimation 5s linear infinite;
+}
+
+@keyframes rotateAnimation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#hero-section h1 {
+	font-size: 64px;
+}
+
+#hero-section::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(75, 91, 238, 0.4);
+}
+
+#hero-section {
+	width: 100%;
+	height: 100vh;
+	background: url("../img/foto-pengantin.jpg") top left;
+	background-size: cover;
+	position: relative;
+	background-position: center;
+	z-index: 2;
+	overflow: hidden;
+}
+
+#hero-section .container {
+	position: relative;
+}
+
+#hero-section .btn-get-started {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 10px 28px;
+	transition: 0.5s;
+	color: var(--pink);
+	background: var(--white);
+}
+
+#hero-section .btn-get-started:hover {
+	background: var(--pink-hover);
+	color: var(--white);
+}
+
+.sparkle {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.text-pink {
+	color: var(--pink);
+}
+
+.pembuka-section {
+	padding-top: 75px;
+}
+
+.section-title {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.section-title h3 {
+	margin: 15px 0 0 0;
+	font-size: 32px;
+}
+
+.section-title p {
+	margin: 15px auto 0 auto;
+}
+
+.section-bg {
+	background-color: var(--pink-muted);
+}
+
+#content-section {
+	overflow-x: hidden;
+}
+
+#lokasi-section {
+	position: relative; /* Penting untuk posisi pseudo-elemen */
+    overflow: -moz-hidden-unscrollable; /* Memastikan pseudo-elemen tidak meluber */
+	z-index: 0;
+    padding-top: 4rem; /* Atur padding atas */
+    padding-bottom: 4rem; /* Atur padding bawah */
+}
+
+#lokasi-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i0.wp.com/www.infobudaya.net/wp-content/uploads/2021/04/gorga.jpg?fit=958%2C459&ssl=1');
+            background-repeat: repeat; /* Ulangi motif untuk mengisi area */
+            background-size: cover; /* Mengisi area tanpa terpotong */
+            background-position: center center;
+            opacity: 0.1; /* Tingkat transparansi: 0.5 = 50% transparan */
+            z-index: 0; /* Pastikan di belakang konten */
+}
+
+.location-card {
+            margin-bottom: 2rem; /* Spasi antar kartu lokasi pada tampilan tumpuk */
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--pink-light);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--pink);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--pink-hover);
+}
+
+
+.card-acara {
+	width: calc(50% - 10px);
+}
+
+.border-pink {
+	border-radius: 15px;
+	border: 2px solid var(--pink);
+}
+
+.btn-pink {
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 10px 28px;
+	border-radius: 4px;
+	transition: 0.5s;
+	color: var(--white);
+	background: var(--pink);
+}
+
+.btn-pink:hover {
+	background: var(--pink-hover);
+	color: var(--white);
+}
+
+/* .timeline {
+	list-style: none;
+	padding: 20px 0 20px;
+	position: relative;
+} */
+
+
+.credit-card {
+	background-color: var(--dark);
+	background-size: cover;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	width: 300px;
+	color: var(--white);
+	position: absolute;
+}
+
+.card-logo {
+	width: 75px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.card-container {
+	display: flex;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.card-sim {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.card-number {
+	font-family: 'Courier New', monospace;
+	font-size: 22px;
+}
+
+.card-name {
+	font-family: 'Courier New', monospace;
+	font-size: 16px;
+	text-align: left;
+	margin-top: 10px;
+}
+
+.copy-button {
+	font-family: 'Courier New', monospace;
+	position: absolute;
+	top: 5px;
+	left: 15px;
+	background-color: var(--white);
+	color: var(--black);
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 20px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-kirim {
+	font-weight: bold;
+	color: var(--white);
+	background: var(--pink);
+}
+
+.btn-kirim:hover {
+	background: var(--pink-hover);
+	color: var(--white);
+}
+
+#penutup-section {
+	position: relative;
+	height: 100vh;
+	color: var(--white);
+	display: flex;
+	align-items: center;
+}
+
+#penutup-section::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 1) 100%), url('../img/penutup.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+@media (max-width: 480px) {
+	.timeline > li > .timeline-panel {
+		width: 75% !important;
+	}
+
+	.timeline > li > .timeline-panel:before {
+		top: 30px;
+	}
+
+	.timeline > li > .timeline-panel:after {
+		top: 31px;
+	}
+
+	.timeline:before {
+		margin-left: -64px;
+	}
+
+	.timeline > li > .timeline-badge {
+		width: 60px;
+		height: 60px;
+		margin-left: -20px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.h1-heading {
+		top: 5rem;
+		bottom: auto;
+		font-size: 36px;
+	}
+
+	#hero-section h1 {
+		font-size: 45px;
+	}
+
+	.nav li a.nav-item-music {
+		font-size: 40px;
+		top: -25px;
+	}
+
+	.nav .nav-music {
+		top: -15px;
+		width: 60px;
+		height: 60px;
+	}
+}
+
+@media (max-width: 992px) {
+	ul.timeline:before {
+		left: 90px;
+	}
+
+	ul.timeline > li > .timeline-panel {
+		width: calc(100% - 200px);
+	}
+
+	ul.timeline > li > .timeline-badge {
+		left: 15px;
+		margin-left: 0;
+		top: 16px;
+	}
+
+	ul.timeline > li > .timeline-panel {
+		float: right;
+	}
+
+	ul.timeline > li > .timeline-panel:before {
+		border-left-width: 0;
+		border-right-width: 15px;
+		left: -15px;
+		right: auto;
+	}
+
+	ul.timeline > li > .timeline-panel:after {
+		border-left-width: 0;
+		border-right-width: 14px;
+		left: -14px;
+		right: auto;
+	}
+
+	.card-acara {
+		width: calc(100% - 10px);
+	}
+
+	.mb-6-custom {
+    margin-bottom: 1.5rem; /* Custom margin-bottom */
+	}
+
+	.location-card {
+            margin-bottom: 2rem; }
+			
+
+    @media (min-width: 768px) { /* Untuk layar medium ke atas */
+            .location-card {
+                margin-bottom: 0; /* Hapus spasi antar kartu saat berdampingan */
+			}
+		}
+
+}
+
+
