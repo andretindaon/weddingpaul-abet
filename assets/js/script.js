@@ -179,13 +179,7 @@ window.addEventListener("load", function() {
  
   // Pastikan script ini dijalankan setelah pustaka Masonry dimuat
   document.addEventListener('DOMContentLoaded', function() {
-      // Inisialisasi AOS
-      AOS.init({
-        // Opsional: atur konfigurasi AOS di sini
-        // once: true, // Animasi hanya berjalan sekali
-      });
-
-      // Temukan kontainer galeri yang memiliki atribut data-masonry
+     // Temukan kontainer galeri yang memiliki atribut data-masonry
       var galleryGrid = document.querySelector('.row[data-masonry]');
 
       if (galleryGrid) {
@@ -201,9 +195,7 @@ window.addEventListener("load", function() {
           });
           console.log("Masonry initialized after all images loaded.");
         });
-      } else {
-        console.warn("Element with class 'row' and attribute 'data-masonry' not found.");
-      }
+	}
 	})
 });
 
