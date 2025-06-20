@@ -245,7 +245,7 @@
 
     <!-- gallery section -->
     <section id="gallery-section" class="gallery-section py-5 section-bg">
-      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="400">
+      <div class="container">
         <div class="section-title">
           <h1 class="text-pink huruf-sambung fw-bold">Gallery</h1>
         </div>
@@ -491,26 +491,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Inisialisasi AOS setelah DOM siap
-      AOS.init();
-
-      // Inisialisasi Masonry setelah SEMUA gambar di dalam grid selesai dimuat
-      var galleryGrid = document.querySelector('.row[gallery-section]'); // Pastikan ini menunjuk ke kontainer galeri Anda
-
-      if (galleryGrid) {
-        imagesLoaded(galleryGrid, function() {
-          new Masonry(galleryGrid, {
-            itemSelector: '.col-sm-6', // Sesuaikan jika ada perubahan selector
-            columnWidth: '.col-sm-6',
-            percentPosition: true
-          });
-          console.log("Masonry initialized after all images loaded.");
-        });
-      }
-    });
-  </script>
+   </script>
   <!-- lightbox2 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- sweetalert2 -->

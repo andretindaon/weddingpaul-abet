@@ -175,6 +175,27 @@ window.addEventListener("load", function() {
     	})
     })
   });
+
+ 
+  // Pastikan script ini dijalankan setelah pustaka Masonry dimuat
+  document.addEventListener('DOMContentLoaded', function() {
+    var grid = document.querySelector('.row[data-masonry]'); // Temukan elemen grid Anda
+
+    if (grid) {
+      // Gunakan imagesLoaded untuk memastikan semua gambar dimuat sebelum Masonry diinisialisasi
+      // Ini mencegah tumpukan karena Masonry menghitung layout sebelum gambar punya dimensi final
+      imagesLoaded(grid, function() {
+        // Inisialisasi Masonry
+        new Masonry(grid, {
+          itemSelector: '.col-sm-6', // Selector untuk setiap item gambar
+          columnWidth: '.col-sm-6', // Atau sesuaikan jika ada sizer khusus
+          percentPosition: true // Penting untuk layout responsif
+        });
+        console.log("Masonry initialized.");
+      });
+    }
+  });
+
 });
 
 
