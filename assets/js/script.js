@@ -179,23 +179,32 @@ window.addEventListener("load", function() {
  
   // Pastikan script ini dijalankan setelah pustaka Masonry dimuat
   document.addEventListener('DOMContentLoaded', function() {
-    var grid = document.querySelector('.row[data-masonry]'); // Temukan elemen grid Anda
-
-    if (grid) {
-      // Gunakan imagesLoaded untuk memastikan semua gambar dimuat sebelum Masonry diinisialisasi
-      // Ini mencegah tumpukan karena Masonry menghitung layout sebelum gambar punya dimensi final
-      imagesLoaded(grid, function() {
-        // Inisialisasi Masonry
-        new Masonry(grid, {
-          itemSelector: '.col-sm-6', // Selector untuk setiap item gambar
-          columnWidth: '.col-sm-6', // Atau sesuaikan jika ada sizer khusus
-          percentPosition: true // Penting untuk layout responsif
-        });
-        console.log("Masonry initialized.");
+      // Inisialisasi AOS
+      AOS.init({
+        // Opsional: atur konfigurasi AOS di sini
+        // once: true, // Animasi hanya berjalan sekali
       });
-    }
-  });
 
+      // Temukan kontainer galeri yang memiliki atribut data-masonry
+      var galleryGrid = document.querySelector('.row[data-masonry]');
+
+      if (galleryGrid) {
+        // Gunakan imagesLoaded untuk memastikan semua gambar di dalam grid selesai dimuat
+        // sebelum Masonry diinisialisasi. Ini sangat penting untuk mencegah tumpukan.
+        imagesLoaded(galleryGrid, function() {
+          // Inisialisasi Masonry
+          new Masonry(galleryGrid, {
+            itemSelector: '.col-sm-6', // Selector untuk setiap item galeri (kolom Bootstrap Anda)
+            columnWidth: '.col-sm-6', // Menentukan lebar kolom berdasarkan kelas Bootstrap
+            percentPosition: true, // Penting untuk layout responsif
+            gutter: 10 // Menambah sedikit jarak antar kolom (opsional, sesuaikan)
+          });
+          console.log("Masonry initialized after all images loaded.");
+        });
+      } else {
+        console.warn("Element with class 'row' and attribute 'data-masonry' not found.");
+      }
+	})
 });
 
 
