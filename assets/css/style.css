@@ -528,23 +528,7 @@ body.transition {
                 margin-bottom: 0; /* Hapus spasi antar kartu saat berdampingan */
 			}
 		}
-	}
 
-	.row.masonry-fallback {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem; /* Jarak antar kolom */
-    }
-
-    .row.masonry-fallback > div {
-        flex: 1 1 calc(50% - 1rem); /* 2 kolom di layar kecil (col-sm-6) */
-    }
-
-    @media (min-width: 992px) { /* Untuk layar besar (col-lg-4) */
-        .row.masonry-fallback > div {
-            flex: 1 1 calc(33.333% - 1rem);
-        }
-	}
-
+}
 
 

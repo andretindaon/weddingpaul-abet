@@ -177,26 +177,7 @@ window.addEventListener("load", function() {
   });
 
  
-  // Pastikan script ini dijalankan setelah pustaka Masonry dimuat
-  document.addEventListener('DOMContentLoaded', function() {
-     // Temukan kontainer galeri yang memiliki atribut data-masonry
-      var galleryGrid = document.querySelector('.row[data-masonry]');
-
-      if (galleryGrid) {
-        // Gunakan imagesLoaded untuk memastikan semua gambar di dalam grid selesai dimuat
-        // sebelum Masonry diinisialisasi. Ini sangat penting untuk mencegah tumpukan.
-        imagesLoaded(galleryGrid, function() {
-          // Inisialisasi Masonry
-          new Masonry(galleryGrid, {
-            itemSelector: '.col-sm-6', // Selector untuk setiap item galeri (kolom Bootstrap Anda)
-            columnWidth: '.col-sm-6', // Menentukan lebar kolom berdasarkan kelas Bootstrap
-            percentPosition: true, // Penting untuk layout responsif
-            gutter: 10 // Menambah sedikit jarak antar kolom (opsional, sesuaikan)
-          });
-          console.log("Masonry initialized after all images loaded.");
-        });
-	}
-	})
-});
+  
+})
 
 
