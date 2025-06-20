@@ -337,12 +337,6 @@ body.transition {
 	color: var(--white);
 }
 
-/* .timeline {
-	list-style: none;
-	padding: 20px 0 20px;
-	position: relative;
-} */
-
 
 .credit-card {
 	background-color: var(--dark);
@@ -432,7 +426,7 @@ body.transition {
 }
 
 @media (max-width: 480px) {
-	.timeline > li > .timeline-panel {
+	/* .timeline > li > .timeline-panel {
 		width: 75% !important;
 	}
 
@@ -453,7 +447,7 @@ body.transition {
 		height: 60px;
 		margin-left: -20px !important;
 	}
-}
+} */
 
 @media (max-width: 768px) {
 	.h1-heading {
@@ -479,7 +473,7 @@ body.transition {
 }
 
 @media (max-width: 992px) {
-	ul.timeline:before {
+	/* ul.timeline:before {
 		left: 90px;
 	}
 
@@ -509,7 +503,7 @@ body.transition {
 		border-right-width: 14px;
 		left: -14px;
 		right: auto;
-	}
+	} */
 
 	.card-acara {
 		width: calc(100% - 10px);
@@ -531,4 +525,4 @@ body.transition {
 
 }
 
-
+}
