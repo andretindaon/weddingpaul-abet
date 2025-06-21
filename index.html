@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wedding Paul ❤ Elizabet</title>
+  <meta property="og:title" content="Undangan Pernikahan Paul & Abet" />
+<meta property="og:description" content="Kami mengundang Anda untuk hadir di hari bahagia kami." />
+<meta property="og:image" content="https://weddingpaul-abet.site/assets/img/penutup.jpg" />
+<meta property="og:url" content="https://weddingpaul-abet.site" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/icon1.jpg">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- lightbox2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="overflow-hidden">
+  <!-- Music -->
+  <audio class="audio" src="assets/audio/opening.mp3" type="audio" loop></audio>
+  <!-- Sfx Door -->
+  <audio id="doorSound" src="assets/audio/door.mp3"></audio>
+
+  <!-- door section -->
+  <div id="door-section" class="open" onclick="mulai()">
+    <h1 class="h1-heading left huruf-sambung2">Paul</h1>
+    <h1 class="h1-heading right huruf-sambung2">Abet</h1>
+    <div class="doors">
+      <div class="door left">
+        <img src="assets/img/door-left.png" alt="Left Door">
+      </div>
+      <div class="door right">
+        <img src="assets/img/door-right.png" alt="Right Door">
+      </div>
+    </div>
+    <div>
+      <h1 class="medieval-font" style="color:black;"> Ketuk pintu untuk masuk ke undangan</h1>
+    </div>
+  </div>
+
+  <!-- content section -->
+  <div id="content-section">
+    <!-- navbar -->
+    <ul class="nav">
+      <span class="nav-music"></span>
+      <li>
+        <a href="#acara-section">
+          <i class="fas fa-fw fa-calendar-day"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#lokasi-section">
+          <i class="fas fa-fw fa-location-dot"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#gallery-section">
+          <i class="fas fa-fw fa-image"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-item-music rotate" id="musicButton" onclick="toggleMusic(event)">
+          <i class="fas fa-fw fa-compact-disc"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#gift-section">
+          <i class="fas fa-fw fa-gift"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#rsvp-section">
+          <i class="fas fa-fw fa-check-to-slot"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#penutup-section">
+           <i class="fas fa-fw fa-heart"></i>
+        </a>
+      </li>
+    </ul>
+
+    <!-- hero section -->
+    <section id="hero-section" class="d-flex align-items-center">
+      <img src="assets/img/sparkle.gif" alt="sparkle" class="sparkle">
+      <div class="container text-center">
+        <h4 class="my-2 text-white">Kepada <span id="namaSambutan"></span></h4>
+        <h1 class="my-2 text-white huruf-sambung">Paul & Elizabet</h1>
+        <h4 class="my-2 text-white">Akan segera melangsungkan pernikahan pada tanggal</h4>
+        <h4 class="my-2 text-white fw-bold">Sabtu, 28 Juni 2025</h4>
+        <div class="row my-3 d-flex justify-content-center" id="countdown-wedding">
+          <div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>0</h5> Hari</div></div>
+          <div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>0</h5> Jam</div></div>
+          <div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>0</h5> Menit</div></div>
+          <div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>0</h5> Detik</div></div>
+        </div>
+        <a href="#pembuka-section" class="rounded-pill text-decoration-none btn btn-lg btn-get-started py-3"><i class="fas fa-fw fa-envelope-open-text"></i> Buka Undangan</a>
+      </div>
+    </section>
+
+    <!-- pembuka section -->
+    <section id="pembuka-section" class="pembuka-section section-bg py-5">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center">
+              <h1 class="text-pink huruf-sambung fw-bold">Salam Sejahtera bagi kita semua</h1>
+              <h2 class="huruf-sambung2">HORAS!!!</h2>
+              <h5 class="medieval-font" style="color: var(--black)">"Sebab pada awal dunia, Allah menjadikan mereka laki-laki dan perempuan, sebab itu laki-laki akan meninggalkan ayahnya dan ibunya dan bersatu dengan istrinya. 
+                Sehingga keduanya itu menjadi satu daging. Demikianlah mereka bukan lagi dua, melainkan satu.
+                Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia. (Markus 10:6-9)"</h5>
+              
+            </div>
+
+            <div class="row my-4 justify-content-center">
+              <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                <img src="assets/img/wedding.JPG" alt="wedding" class="img-fluid rounded-pill">
+              </div>
+            </div>
+
+            <div class="row my-3 justify-content-between">
+              <div class="col rounded" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="p-2 pt-3 text-center">
+                  <h1 class="text-center huruf-sambung2 " style="color: black;">Paul Oktavianus Tindaon</h1>
+                  <p>Putra dari:</p>
+                  <p>B. Tindaon & R. Sinaga (Op. Liofano)</p>
+                </div>
+              </div>
+              <div class="col-sm-1 my-auto" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <h1 class="text-center huruf-sambung">&</h1>
+              </div>
+              <div class="col rounded" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="p-2 pt-3 text-center">
+                  <h1 class="text-center huruf-sambung2" style="color: black;">Agustina Elizabet Panjaitan</h1>
+                  <p>Putri dari:</p>
+                  <p>J. Panjaitan & D. Situmorang (Op. Theo)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- acara section -->
+    <section id="acara-section" class="acara-section py-5">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h1 class="text-pink huruf-sambung fw-bold">Acara Pernikahan</h1>
+              <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restunya, kami ucapkan terima kasih.</p>
+            </div>
+
+            <div class="row justify-content-between px-3 text-center">
+              <div class="col-lg-6 border my-2 rounded p-3 card-acara" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <h4>Pemberkatan Perkawinan</h4>
+                <hr>
+                <p><i class="fas fa-fw fa-calendar-day"></i> Sabtu, 28 Juni 2025</p>
+                <p><i class="fas fa-fw fa-clock"></i> 10:00 WIB - 11.00</p>
+                <p><i class="fas fa-fw fa-location-dot"></i> Gereja St. Fransiskus Asisi Jalan Sejahtera, Duri</p>
+                <a class="btn btn-lg btn-pink rounded-pill" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Pemberkatan+Pernikahan+Paul+dan+Abet&details=Pemberkatan+Pernikahan+Paul+dan+Abet&location=Gereja+Katolik+St.+Fransiskus+Asisi+Sejahtera,+Duri&dates=20250628T030000Z/20250628T040000Z" 
+                target="_blank"><i class="fas fa-fw fa-calendar-day"></i> Simpan ke Kalender</a>
+              </div>
+              <div class="col-lg-6 border my-2 rounded p-3 card-acara" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                <h4>Resepsi/Acara Adat</h4>
+                <hr>
+                <p><i class="fas fa-fw fa-calendar-day"></i> Sabtu, 28 Juni 2025</p>
+                <p><i class="fas fa-fw fa-clock"></i> 12:00 WIB - Selesai</p>
+                <p><i class="fas fa-fw fa-location-dot"></i> Aula Sopo Dame Jalan Babussalam, Duri</p>
+                <a class="btn btn-lg btn-pink rounded-pill" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Pernikahan+Paul+dan+Abet&details=Resepsi+Pernikahan+Paul+dan+Abet&location=Sopo+Dame+Babussalam,+Duri&dates=20250628T050000Z/20250628T070000Z" 
+                target="_blank"><i class="fas fa-fw fa-calendar-day"></i> Simpan ke Kalender</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  
+   <!-- Lokasi Section -->
+    <section id="lokasi-section" class="lokasi-section">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-lg-12"> <!-- Lebarkan kolom utama menjadi 12 untuk menampung 2 lokasi dengan lebih baik -->
+            <div class="text-center mb-5">
+              <h1 class="text-pink huruf-sambung fw-bold display-5">Lokasi Pemberkatan &amp; Resepsi Pernikahan</h1>
+            </div>
+            <div class="row"> <!-- Baris untuk menampung dua kolom lokasi -->
+              <!-- Lokasi Pemberkatan -->
+              <div class="col-md-6 location-card" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500"> 
+                <div class="text-center">
+                  <h3 class="text-black mb-3">Pemberkatan Pernikahan</h3>
+                  <a class="btn btn-lg btn-pink mb-4 rounded-pill" href="https://maps.app.goo.gl/AsQqg9Egtf53Eii88" target="_blank">
+                    <i class="fas fa-fw fa-location-dot me-2"></i> Buka di Google Maps
+                  </a>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      class="embed-responsive-item w-100 border-pink"
+                      style="height: 450px;"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.797815841791!2d101.19236531162643!3d1.2959187986863252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d37c7bf8b54a69%3A0xf47ec51d1fd4a3dd!2sGereja%20Katolik%20Paroki%20Santo%20Fransiskus%20Asisi%2C%20Duri%20Sejahtera!5e0!3m2!1sen!2sid!4v1750316498147!5m2!1sen!2sid"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      title="Google Maps Location of Gereja Katolik Paroki Santo Fransiskus Asisi"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lokasi Resepsi -->
+              <div class="col-md-6 location-card" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500"> 
+                <div class="text-center">
+                  <h3 class="text-black mb-3">Resepsi Pernikahan/Acara Adat</h3>
+                  <a class="btn btn-lg btn-pink mb-4 rounded-pill" href="https://maps.app.goo.gl/XgzxgYdxaaSCGft17" target="_blank">
+                    <i class="fas fa-fw fa-location-dot me-2"></i> Buka di Google Maps
+                  </a>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      class="embed-responsive-item w-100 border-pink"
+                      style="height: 450px;"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.4000870626585!2d101.18681585660578!3d1.2944204996719648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d37b6f5371f1ff%3A0xad0ae82e67a193c!2sSopo%20Dame%20Jalan%20Babussalam!5e0!3m2!1sen!2sid!4v1750320576411!5m2!1sen!2sid"                    
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      title="Google Maps Location for Reception"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery section -->
+    <section id="gallery-section" class="gallery-section py-5 section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h1 class="text-pink huruf-sambung fw-bold">Gallery</h1>
+        </div>
+
+        <div class="row" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/1.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/1.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/2.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/2.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/3.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/3.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/4.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/4.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/5.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/5.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/6.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/6.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/7.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/7.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/8.JPG" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/8.JPG" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/9.JPG" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/9.JPG" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/10.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/10.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/11.JPG" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/11.JPG" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/12.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/12.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/13.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/13.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/14.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/14.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/15.JPG" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/15.JPG" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/16.jpg" data-lightbox="paulAbet" class="text-decoration-none">
+              <img src="assets/img/gallery/16.jpg" alt="paul & abet " class="card-img border-pink">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+    <!-- gift section -->
+    <section id="gift-section" class="gift-section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h1 class="text-pink huruf-sambung fw-bold">Wedding Gift (Tumpak)</h1>
+              <p>Bagi Bapak/Ibu/Saudara/i yang ingin mengirimkan hadiah/tumpak pernikahan dapat melalui rekening di bawah ini:</p>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                <button type="button" class="text-center btn btn-lg btn-pink mb-4 rounded-pill" data-bs-toggle="collapse" data-bs-target="#collapseHadiah"><i class="fas fa-fw fa-gift"></i> Kirim Hadiah</button>
+                <div class="collapse" id="collapseHadiah">
+                  <div class="my-4 mx-auto position-relative credit-card">
+                    <img src="assets/img/card/logo-bca.png" alt="Logo BCA" class="card-logo">
+                    <div class="card-container">
+                      <img src="assets/img/card/sim.png" alt="sim" class="card-sim">
+                      <div class="card-number">0239616315</div>
+                    </div>
+                    <div class="card-name mt-2">Agustina Elizabet Panjaitan</div>
+                    <a style="cursor: pointer;" onclick="copyText(this)" class="copy-button btn btn-light mt-3">
+                      <i class="fas fa-regular fa-copy"></i>
+                      Copy
+                    </a>
+                  </div>
+                  <div class="my-4 mx-auto position-relative credit-card">
+                    <img src="assets/img/card/logo-shopee.png" alt="Logo Shopee" class="card-logo">
+                    <div class="card-container">
+                      <img src="assets/img/card/sim.png" alt="sim" class="card-sim">
+                      <div class="card-number">1720000018137</div>
+                    </div>
+                    <div class="card-name mt-2">Paul Oktavianus Tindaon </div>
+                    <a style="cursor: pointer;" onclick="copyText(this)" class="copy-button btn btn-light mt-3">
+                      <i class="fas fa-regular fa-copy"></i>
+                      Copy
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- rsvp section -->
+    <section id="rsvp-section" class="rsvp-section section-bg py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center">
+              <h1 class="text-pink huruf-sambung fw-bold">RSVP</h1>
+              <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran Anda.</p>
+            </div>
+            <form action="https://script.google.com/macros/s/AKfycbzkDlhtE8m5t1Jlp7XiLl7j-JPsNFqNwPYp-hYc6nSodxlUViBFVYRiRgACP_UaVUCP2A/exec" 
+            class="row row-cols-md-auto g-3 align-items-center justify-content-center" id="rsvp-form" method="POST">
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="nama" class="form-label">Nama</label>
+                  <input type="text" class="form-control" id="nama" name="nama">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="jumlah" class="form-label">Jumlah</label>
+                  <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" value="1">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="status" class="form-label">Status</label>
+                  <select name="status" id="status" class="form-select">
+                    <option value="0" selected>Pilih salah satu</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 mt-3">
+                <div class="mt-3">
+                  <button type="submit" class="btn btn-kirim"><i class="fas fa-fw fa-paper-plane"></i> Kirim</button>
+                </div>
+              </div>
+            </form>
+            <div class="row mt-5 justify-content-center">
+              <div class="col-lg-12">
+              <div id="disqus_thread"></div>
+                    <script>
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                        /*
+                        var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://wedding-paul-abet.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>              
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- penutup section -->
+    <section id="penutup-section" class="penutup-section py-5">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center">
+              <h1 class="text-pink-muted huruf-sambung fw-bold">Terima Kasih</h1>
+              <p>Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan doa restu kepada kami.</p>
+              <h5 class="my-3">KAMI YANG BERBAHAGIA</h5>
+              <h1 class="huruf-sambung">Paul & Abet</h1>
+              <h5 class="medieval-font">Tetapi kata Rut: "Janganlah desak aku meninggalkan engkau dan pulang dengan tidak mengikuti engkau; 
+              sebab ke mana engkau pergi, ke situ jugalah aku pergi, dan di mana engkau bermalam, di situ jugalah aku bermalam: bangsamulah bangsaku dan Allahmulah Allahku </h5> 
+              <h5 class="medieval-font">Rut 1:16</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="footer" class="mb-5 pb-5">
+      <div class="container py-5 text-center position-relative">
+        <div class="row">
+          <div class="col-12 my-3">
+            <a target="_blank" class="text-decoration-none text-pink fw-bold">&copy; Paul-Abet Wedding 2025. </a>
+          </div>
+          <div class="col-12 my-3">
+            <a href="#" class="text-pink"><i class="fas fa-fw fa-arrow-up"></i> Back to top</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- aos -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- lightbox2 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.all.min.js" integrity="sha256-iSkyJ41luwYhZX4JnDUop92wix0y8SBGAW5tCnnCfZ4=" crossorigin="anonymous"></script>
+  <!-- masonry -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" defer integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" 
+  crossorigin="anonymous" async></script> -->
+  <!-- js -->
+  <script src="assets/js/script.js"></script>
+  <!-- disqus -->
+  <script id="dsq-count-scr" src="//wedding-paul-abet.disqus.com/count.js" async></script>
+</body>
+</html>
